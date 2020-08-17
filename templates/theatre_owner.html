@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Theatre_Owner</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        .container{
+            margin-left: 50px;
+        }
+        h2{
+            text-align: center;
+            font-family: sans-serif;
+            font-style: normal;
+        }
+        .mvrqst{
+            margin-top: 20px;
+        }
+        fieldset {
+            margin-inline-end: 1300px;
+            margin-top: 50px;
+            border: 4px groove ThreeDLightShadow;
+            height: 150px;
+            background-color: #bd3d3d91;
+        }
+        legend{
+            font-weight: bold;
+        }
+        .shwtm {
+            margin-top: 10px;
+            padding-left: 15px;
+            margin-bottom: 10px;
+        }
+        .mvdtls {
+            padding-left: 15px;
+            margin-top: 18px;
+        }
+        .mov_t{
+            margin-top: 10px;
+        }
+        .mov_t input {
+            margin-left: 8px;
+        }
+        .btn{
+            margin-top: 8px;
+        }
+    </style>
+</head>
+<body style="color: white;">
+    <div class="navbar">
+        <a href="/">Home</a>
+        <div class="username">
+            <a href="#">{{u}}</a>
+        </div>
+        <div class="lgt">
+            <a href="/logout">log out</a>
+        </div>
+    </div>
+    <h2>This is theatre {{t}}</h2>
+    <div class="container">
+        <form action="" method="post">
+                <div class="uphts">
+                    <strong style="font-size: 18px;">Upload an image of your theatre</strong> <br>
+                    <input type="file" name="Upload">
+                </div>
+                <div class="mvrqst">
+                    <a href="/theatre/movie_req" style="text-decoration: none; color: rgb(245, 248, 78); font-size: 20px;  font-family: Arial, Helvetica, sans-serif; font-weight: bold;">Click Here to request for movie</a>
+                </div>
+                <fieldset>
+                    <legend style="font-size: 20px;">Post your movies</legend>
+                    <div class="shwtm">
+                        <strong> Showtime: </strong><input type="radio" name='Showtime' value='9_12'>9:00-12:00
+                        <input type="radio" name='Showtime' value='1_4'>1:00-4:00
+                        <input type="radio" name='Showtime' value='5_8'>5:00-8:00
+                    </div>
+                    <div class="mvdtls">
+                        <div class="mov_n">
+                            <strong>Movie Name: </strong>
+                            <select name='Movie_Name'>
+                                {% for row in m %}
+                                    {% if row['Theatre_Name']=='thr1' and row['Request']=='1' %}
+                                        <option value="{{ row['Movie_Name'] }}">{{row['Movie_Name']}}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>    
+                            <br>
+                        </div>
+                        <div class="mov_t">
+                            <strong>Movie Type: </strong><input type="text" name='Movie_Type'><br>
+                        </div>
+                    </div>
+                </fieldset>
+                <button class="btn" type="submit">Submit</button>
+        </form>
+    </div>    
+</body>
+</html>

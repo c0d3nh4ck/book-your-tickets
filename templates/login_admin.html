@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+    <title>Admin</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        .container{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+                <button class="dropbtn">Sign Up
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/signup_user">user</a>
+                    <a href="/signup_theatre">theatre</a>
+                </div>
+            </div>
+        <div class="dropdown">
+            <button class="dropbtn">Sign In
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/login_user">user</a>
+                <a href="/login_theatre">theatre</a>
+                <a href="/login_admin">admin</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 style="color: white;">Log In As Admin</h3>
+        <form method="post" action="">
+            <div class="form-group">
+                <input type="text" name="admin_id" class="form-control" placeholder="Admin_id" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" required>
+            </div>
+            <button class="btn" type="submit">Sign In</button>
+        </form>
+    </div>    
+</body>
+</html>

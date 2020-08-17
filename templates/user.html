@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>User</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        .header{
+            margin-left: 50px;
+        }
+        .chsmv {
+            width: 600px;
+            height: 750px;
+            overflow: auto;
+            position: relative;
+            padding: 30px;
+            background: white;
+            opacity: 0.9;
+            border: 15px solid crimson;
+            left: 1000px;
+            bottom: 40px;
+        }
+        img {
+            max-height: 500px;
+            min-width: 400px;
+        }
+        .movies{
+            transition: 0.6s;
+        }
+        .movies:hover{
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <div class="lgt">
+            <a href="/logout">log out</a>
+        </div>
+    </div>    
+    <div class="header">
+        <h2 style="color: white;">Hey there {{u}}</h2>
+    </div>   
+    
+        
+        
+    <form action="" method="post">
+        <div class="chsmv">
+            {% for rows in movie %}
+            <a href="#">
+                <div class="movies">
+                    <img src="/static/{{rows['Movie_Name']}}.jpg" alt="{{rows['Movie_Name']}}" max-width="400"> 
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </form>
+</body>
+</html>

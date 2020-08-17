@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Book Your Tickets</title>
+    <link rel="stylesheet" href="/static/home.css">
+</head>
+<body>
+    <div class="navbar" style="height: 47px;">
+        <a href="/">Home</a>
+        {% if s %}
+            {% if a %}
+                <a href="/user">view profile</a>
+                <div class="search" style="position: relative; left: 500px; top: 7px;">
+                    <div class="icon"></div>
+                    <input type="text" placeholder="Search..">
+                </div>
+            {% elif b %}    
+                <div class='thrpf'>
+                    <a href="/theatre">view profile</a>
+                </div>
+            {% elif c %} 
+                <div class='admpf'>
+                    <a href="/admin">view profile</a>
+                </div>
+            {% endif %}    
+            <a href="/logout" style="position: relative; bottom: 32px;">log out</a>
+        {% else %}
+            <div class="dropdown">
+                <button class="dropbtn">Sign Up
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/signup_user">user</a>
+                    <a href="/signup_theatre">theatre</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Sign In
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/login_user">user</a>
+                    <a href="/login_theatre">theatre</a>
+                    <a href="/login_admin">admin</a>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Sign In</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        .container{
+            margin-left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="/">Home</a>
+        <div class="dropdown">
+                <button class="dropbtn">Sign Up
+                <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="/signup_user">user</a>
+                    <a href="/signup_theatre">theatre</a>
+                </div>
+        </div>
+        <div class="dropdown">
+            <button class="dropbtn">Sign In
+            <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="/login_user">user</a>
+                <a href="/login_theatre">theatre</a>
+                <a href="/login_admin">admin</a>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h3 style="color: white;">Sign Up As Theatre_Owner</h3>
+        <form method="post" action="">
+            <div class="form-group">
+                <input type="text" name="username" class="form-control" placeholder="E-mail" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Theatre Name" required="">
+            </div>
+            <div class="form-group">
+                <input type="text" name="place" class="form-control" placeholder="Place" required="">
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" class="form-control" placeholder="Password" required="">
+            </div>
+            <input type="submit" value="SIGN UP">
+        </form>
+    </div>
+</body>
+</html>

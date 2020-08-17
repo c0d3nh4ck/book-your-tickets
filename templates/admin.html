@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="/static/home.css">
+    <style>
+        table {
+          font-family: arial, sans-serif;
+          border-collapse: collapse;
+          width: 25%;
+        }
+        
+        td, th {
+          border: 1px solid #dddddd;
+          text-align: left;
+          padding: 8px;
+        }
+        
+        tr:nth-child(even) {
+          background-color: #dddddd;
+        }
+
+        a.button {
+            -webkit-appearance: button;
+            -moz-appearance: button;
+            appearance: button;
+
+            text-decoration: none;
+            color: initial;
+        }
+    </style>
+</head>
+<body style="color: white;">
+    <div class="navbar">
+        <a href="/">Home</a>
+        <div class="lgt">
+            <a href="/logout">log out</a>
+        </div>
+    </div>    
+    <h2>Welcome Admin</h2><br>
+    <div class="header"><h2>Requests for Movie</h2></div>
+    <table style="color: black;">
+        <tr>
+            <th>Theatre</th>
+            <th>Movie</th>
+        </tr>
+        {% for row in req %} 
+        <tr>
+            {% if row['Request']=='0' %}
+                <td>{{row['Theatre_Name']}}</td>
+                <td>{{row['Movie_Name']}}</td>
+                <td>
+                    <a href="/admin/{{row['ID']}}" class="button">Allowed</a>
+                    <a href="/admin/{{row['ID']}}/remove" class="button">Not Allowed</a>
+                </td>
+            {% endif %}    
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
