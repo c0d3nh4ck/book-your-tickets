@@ -2,7 +2,7 @@
 
 ## A web application made for booking tickets 
 
-This web application is built on Flask framework
+The backend of the website is supported by Flask framework and have a minimal frontend interface
 
 ### Some features of the website
 
